@@ -1,0 +1,31 @@
+# Archivos de configuración de entornos
+*.env
+
+# Archivos de Python
+_pycache_/
+*.py[cod]
+*.pyo
+
+# Archivos de compilación
+build/
+dist/
+*.egg-info/
+
+# Entornos virtuales
+env/
+venv/
+.venv/
+
+# Archivos de bases de datos
+*.sqlite3
+*.db
+
+# Archivos de logs
+*.log
+
+# PyCharm
+.idea/
+*.iml
+
+# Visual Studio Code
+.vscode/
