@@ -4,8 +4,6 @@ from rest_framework.response import Response
 from rest_framework.decorators import action
 from .models import Station
 from .serializers import StationSerializer
-from django.contrib.gis.geos import Point
-from django.contrib.gis.measure import D  # Distance
 import math
 
 class StationViewSet(viewsets.ViewSet):

@@ -1,0 +1,27 @@
+services:
+  web:
+    build: .
+    container_name: django_app
+    command: sh -c "sleep 10; python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app  # Monta el directorio actual en el contenedor
+    ports:
+      - "8000:8000"  # Mapea el puerto 8000 del contenedor al puerto 8000 de la máquina host
+    depends_on:
+      - db  # Asegura que el contenedor de la base de datos esté en funcionamiento
+
+  db:
+    image: mysql:latest  # Puedes especificar una versión específica de MySQL
+    restart: always
+    environment:
+      MYSQL_DATABASE: stations  # Nombre de la base de datos
+      MYSQL_USER: regularuser  # Usuario de la base de datos
+      MYSQL_PASSWORD: qwerty1234 # Contraseña de la base de datos
+      MYSQL_ROOT_PASSWORD: qwerty123  # Contraseña del root
+    ports:
+      - "3307:3306"  # Mapea el puerto 3306 del contenedor al puerto 3306 de la máquina host
+    volumes:
+      - db_data:/var/lib/mysql  # Persistencia de datos
+
+volumes:
+  db_data:  # Define un volumen para almacenar los datos de MySQL

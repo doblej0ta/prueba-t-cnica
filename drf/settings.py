@@ -28,7 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-GDAL_LIBRARY_PATH = "C:\\OSGeo4W\\bin\\gdal309.dll"
+GDAL_LIBRARY_PATH = "/usr/lib/libgdal.so"
+
 
 # Application definition
 
@@ -82,9 +83,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'stations',
-        'USER': 'root',
-        'PASSWORD': 'qwerty123',
-        'HOST': 'localhost',  # o la dirección de tu servidor
+        'USER': 'regularuser',
+        'PASSWORD': 'qwerty1234',
+        'HOST': 'db',  # o la dirección de tu servidor
         'PORT': '3306',       # el puerto por defecto de MySQL
     }
 }
