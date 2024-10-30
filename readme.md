@@ -22,20 +22,26 @@ Este proyecto es una API RESTful para gestionar estaciones con información geog
 ## Instalación
 
 1. Clona este repositorio:
-   bash
-   git clone [<repositorio-url>](https://github.com/doblej0ta/prueba-t-cnica)
+   ```bash
+   git clone https://github.com/doblej0ta/prueba-t-cnica
+   ```
+
+   ```bash
    cd prueba-t-cnica
+   ```
+   
    
 
 2. Crea un entorno virtual e instálalo:
-   bash
+   ```bash
    python -m venv env
    source env/bin/activate  # En Windows usa env\Scripts\activate
    pip install -r requirements.txt
+   ```
    
 
 3. Configura la base de datos en `settings.py`:
-   python
+   ```python
    DATABASES = {
        'default': {
            'ENGINE': 'django.contrib.gis.db.backends.postgis',
@@ -46,21 +52,25 @@ Este proyecto es una API RESTful para gestionar estaciones con información geog
            'PORT': '3306',
        }
    }
+   ```
    
 
 4. Realiza las migraciones:
-   bash
+   ```bash
    python manage.py migrate
+   ```
    
 
 5. Crea un superusuario:
-   bash
+   ```bash
    python manage.py createsuperuser
+   ```
    
 
 6. Ejecuta el servidor:
-   bash
+   ```bash
    python manage.py runserver
+   ```
    
 
 ## Endpoints
@@ -70,12 +80,13 @@ Este proyecto es una API RESTful para gestionar estaciones con información geog
 - **URL:** `/api/stations/`
 - **Método:** `POST`
 - **Cuerpo (JSON):**
-  json
+  ```json
   {
       "name": "Estación 1",
       "latitude": 10.123456,
       "longitude": -74.123456
   }
+  ```
   
 
 ### Listar estaciones
@@ -83,7 +94,7 @@ Este proyecto es una API RESTful para gestionar estaciones con información geog
 - **URL:** `/api/stations/`
 - **Método:** `GET`
 - **Respuesta:**
-  json
+  ```json
   [
       {
           "id": 1,
@@ -92,6 +103,7 @@ Este proyecto es una API RESTful para gestionar estaciones con información geog
           "longitude": -74.123456
       }
   ]
+  ```
   
 
 ### Estación más cercana
@@ -110,12 +122,13 @@ Puedes utilizar Postman o cualquier cliente HTTP para probar los endpoints. Aseg
    - Método: `POST`
    - URL: `http://localhost:8000/api/stations/`
    - Cuerpo: (JSON)
-   json
+   ```json
    {
        "name": "Estación 1",
        "latitude": 10.123456,
        "longitude": -74.123456
    }
+   ```
    
 
 2. **Listar estaciones:**
